@@ -5,24 +5,7 @@
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/3.0.0/aframe/build/aframe-ar-nft.js"></script>
-    <script>
-      AFRAME.registerComponent('change-url',{
-        schema : {},
-        init : function(){
-          this.el.addEventListener('click',function(e){
-            console.log(e.target.className);
-            if(e.target.className == "nagura"){
-            window.location.href = "https://www.google.co.jp";
-          }
-          if(e.target.className == "hirakubo"){
-          window.location.href = "https://yahoo.co.jp";
-        }
-          })
-        }
-      })      
-      </script>
 
-      
     <style>
       .arjs-loader {
         height: 100%;
@@ -70,11 +53,9 @@
       >
         <!-- <a-box position="80 80 0" scale="70 70 70" color="tomato" wireframe="true"  wireframe-linewidth=10  animation="property: rotation; to: 0 360 0; loop: true; dur: 20000" ></a-box> -->
         <a-image
-        class="hirakubo"
         src="guide-nagura.png"
         position="70 250 0" 
         scale="200 200 200"
-        change-url material geometry
         ></a-image>
       </a-nft>
 
@@ -87,11 +68,9 @@
         smoothThreshold="5" >
         <!-- <a-box position="80 80 0" scale="70 70 70" color="tomato" wireframe="true"  wireframe-linewidth=10  animation="property: rotation; to: 0 360 0; loop: true; dur: 20000" ></a-box> -->
         <a-image
-        class="hirakubo"
         src="guide-hirakubo.png"
         position="70 250 0" 
         scale="200 200 200"
-        change-url material geometry
         ></a-image>
       </a-nft>
       <!-- <a-nft
