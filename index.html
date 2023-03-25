@@ -5,6 +5,33 @@
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/3.0.0/aframe/build/aframe-ar-nft.js"></script>
+    <script>
+  AFRAME.registerComponent('navigate-on-click', {
+    schema: {
+      url: {default: ''}
+    },
+    init: function () {
+      var data = this.data;
+      this.el.addEventListener('click', function () {
+        window.location.href = data.url;
+      });
+    }
+  });
+</script>
+
+  <script>
+    window.onload = function () {
+      document
+        .querySelector(".say-hi-button")
+        .addEventListener("click", function () {
+          // here you can change also a-scene or a-entity properties, like
+          // changing your 3D model source, size, position and so on
+          // or you can just open links, trigger actions...
+          alert("Hi there!");
+        });
+    };
+  </script>
+
 
     <style>
       .arjs-loader {
@@ -25,21 +52,29 @@
         font-size: 1.25em;
         color: white;
       }
-    </style>    
 
-<script>
-  AFRAME.registerComponent('navigate-on-click', {
-    schema: {
-      url: {default: ''}
-    },
-    init: function () {
-      var data = this.data;
-      this.el.addEventListener('click', function () {
-        window.location.href = data.url;
-      });
+          .buttons {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
     }
-  });
-</script>
+
+    .say-hi-button {
+      padding: 0.25em;
+      border-radius: 4px;
+      border: none;
+      background: white;
+      color: black;
+      width: 4em;
+      height: 2em;
+    }
+    </style>    
 
   </head>
 
@@ -48,6 +83,10 @@
     <!-- minimal loader shown until image descriptors are loaded -->
     <div class="arjs-loader">
       <div>しばしお待ちを...</div>
+    </div>
+    
+   <div class="buttons">
+      <button class="say-hi-button">SAY HI!</button>
     </div>
 
     <a-scene
