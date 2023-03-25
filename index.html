@@ -51,17 +51,30 @@
         color: white;
       }
 
-          .buttons {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 5em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-    }
+      
+  .buttons {
+    position: absolute;
+    bottom: 3cm;
+    left: 0;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .buttons button {
+    background-color: #40E0D0; /* ①ボタンカラーを青緑色に変更 */
+    color: #FFFFFF; /* ②文字色を白に */
+    font-size: 1.3em; /* ④ボタンの大きさを30%ほど大きく */
+    padding: 0.5em 1em; /* ④ボタンの大きさを30%ほど大きく */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+
     </style>    
   </head>
 
@@ -73,7 +86,7 @@
     </div>
 
     <div class="buttons" style="display: none;">
-      <button type="button">ページリンク</button>
+      <button type="button">この場所へ行く</button>
     </div>
 
 
