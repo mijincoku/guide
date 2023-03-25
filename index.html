@@ -6,15 +6,14 @@
     <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/3.0.0/aframe/build/aframe-ar-nft.js"></script>
 
-
   <script>
         const markerLinks = {
-          nagura: "https://shop.katagiriscreen.com/item-detail/1166610",
-          hirakubo: "https://example.com/hirakubo",
-          fuune: "https://example.com/fuune",
-          port: "https://example.com/port",
-          sukuji: "https://example.com/sukuji",
-          yashima: "https://example.com/yashima",
+          nagura: "https://www.google.com/maps/dir/?api=1&destination=24.411208685386672,124.14409391411303",
+          hirakubo: "https://www.google.com/maps/dir/?api=1&destination=24.610300832970438,124.3161103461495",
+          fuune: "https://www.google.com/maps/dir/?api=1&destination=24.420040591782513,124.1337949076269",
+          port: "https://www.google.com/maps/dir/?api=1&destination=24.33252835029597,124.15931266432014",
+          sukuji: "https://www.google.com/maps/dir/?api=1&destination=24.464778723344576,124.12349805986521",
+          yashima: "https://www.google.com/maps/dir/?api=1&destination=24.330963023236066,124.17078288057222",
         };
 
           const nftElements = document.querySelectorAll("a-nft");
@@ -175,9 +174,7 @@
       ></a-image>
       </a-nft>
 
-      <a-entity camera>
-        <a-cursor fuse="true" fuseTimeout="50"></a-cursor>
-      </a-entity>
+      <a-entity camera></a-entity>
       
     </a-scene>
 
