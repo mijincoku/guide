@@ -92,14 +92,12 @@
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
-        smoothThreshold="5"
-      >
+        smoothThreshold="5">
        <a-image
         src="guide-nagura.png"
         position="70 250 0" 
         scale="200 200 200"
         ></a-image>
-        </a-nft>
       </a-nft>
 
      <a-nft
@@ -185,12 +183,19 @@
 
 
     <script>
-      document.querySelector("#nagura").addEventListener("markerFound", function () {
-        document.querySelector(".buttons").style.display = "flex";
-      });
-      
-      document.querySelector("#nagura").addEventListener("markerLost", function () {
-        document.querySelector(".buttons").style.display = "none";
+      window.addEventListener("DOMContentLoaded", function() {
+        const nftElements = document.querySelectorAll("a-nft");
+        nftElements.forEach((nftElement) => {
+          nftElement.addEventListener("markerFound", function () {
+            const link = markerLinks[nftElement.id];
+            document.querySelector(".buttons button").setAttribute("onclick", `location.href='${link}'`);
+            document.querySelector(".buttons").style.display = "flex";
+          });
+
+          nftElement.addEventListener("markerLost", function () {
+            document.querySelector(".buttons").style.display = "none";
+          });
+        });
       });
     </script> 
 
