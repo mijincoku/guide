@@ -5,33 +5,30 @@
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/3.0.0/aframe/build/aframe-ar-nft.js"></script>
-  
-    <!-- 一番最初に作ったボタン
-      <script>
-  AFRAME.registerComponent('navigate-on-click', {
-    schema: {
-      url: {default: ''}
-    },
-    init: function () {
-      var data = this.data;
-      this.el.addEventListener('click', function () {
-        window.location.href = data.url;
-      });
-    }
-  });
-</script> -->
+
 
   <script>
-    window.onload = function () {
-      document
-        .querySelector(".say-hi-button")
-        .addEventListener("click", function () {
-          // here you can change also a-scene or a-entity properties, like
-          // changing your 3D model source, size, position and so on
-          // or you can just open links, trigger actions...
-          alert("Hi there!");
-        });
-    };
+        const markerLinks = {
+          nagura: "https://example.com/nagura",
+          hirakubo: "https://example.com/hirakubo",
+          fuune: "https://example.com/fuune",
+          port: "https://example.com/port",
+          sukuji: "https://example.com/sukuji",
+          yashima: "https://example.com/yashima",
+        };
+
+          const nftElements = document.querySelectorAll("a-nft");
+        nftElements.forEach((nftElement) => {
+          nftElement.addEventListener("markerFound", function () {
+            const link = markerLinks[nftElement.id];
+            document.querySelector(".buttons button").setAttribute("onclick", `location.href='${link}'`);
+            document.querySelector(".buttons").style.display = "flex";
+          });
+
+          nftElement.addEventListener("markerLost", function () {
+            document.querySelector(".buttons").style.display = "none";
+          });
+        });     
   </script>
 
 
@@ -66,18 +63,7 @@
       align-items: center;
       z-index: 10;
     }
-
-    /* .say-hi-button {
-      padding: 0.25em;
-      border-radius: 4px;
-      border: none;
-      background: white;
-      color: black;
-      width: 4em;
-      height: 2em;
-    } */
     </style>    
-
   </head>
 
 
@@ -91,7 +77,6 @@
       <button type="button" onclick="location.href='https://techacademy.jp/magazine/'">ページリンク</button>
     </div>
 
-    
 
     <a-scene
       vr-mode-ui="enabled: false;"
@@ -109,124 +94,86 @@
         smoothTolerance=".01"
         smoothThreshold="5"
       >
-        <!-- <a-box position="80 80 0" scale="70 70 70" color="tomato" wireframe="true"  wireframe-linewidth=10  animation="property: rotation; to: 0 360 0; loop: true; dur: 20000" ></a-box> -->
-        <a-image
+       <a-image
         src="guide-nagura.png"
         position="70 250 0" 
         scale="200 200 200"
-        ></a-image>
-        <a-image
-        src="map.png"
-        position="100 120 0" 
-        scale="120 40 200"
-        navigate-on-click="url:https://www.google.com/maps/dir/?api=1&destination=24.411208685386672,124.14409391411303"
         ></a-image>
         </a-nft>
       </a-nft>
 
      <a-nft
+        id="hirakubo"     
         type="nft"        
         url="https://cdn.glitch.global/24c94111-7a50-4163-a9e1-9d6d366b5663/hirakubo"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5" >
-        <!-- <a-box position="80 80 0" scale="70 70 70" color="tomato" wireframe="true"  wireframe-linewidth=10  animation="property: rotation; to: 0 360 0; loop: true; dur: 20000" ></a-box> -->
         <a-image
         src="guide-hirakubo.png"
         position="70 250 0" 
         scale="200 200 200"
         ></a-image>
-        <a-image
-        src="map.png"
-        position="100 120 0" 
-        scale="120 40 200"
-        navigate-on-click="url:https://www.google.com/maps/dir/?api=1&destination=24.610300832970438,124.3161103461495"
-        ></a-image>
       </a-nft>
 
       <a-nft
+      id="fuune"
       type="nft"        
       url="https://cdn.glitch.global/24c94111-7a50-4163-a9e1-9d6d366b5663/fuune"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5" >
-      <!-- <a-box position="80 80 0" scale="70 70 70" color="tomato" wireframe="true"  wireframe-linewidth=10  animation="property: rotation; to: 0 360 0; loop: true; dur: 20000" ></a-box> -->
       <a-image
       src="guide-fuune.png"
       position="70 250 0" 
       scale="200 200 200"
       ></a-image>
-      <a-image
-      src="map.png"
-      position="100 120 0" 
-      scale="120 40 200"
-      navigate-on-click="url:https://www.google.com/maps/dir/?api=1&destination=24.420040591782513,124.1337949076269"
-      ></a-image>
       </a-nft>
 
       <a-nft
+      id="port"
       type="nft"        
       url="https://cdn.glitch.global/24c94111-7a50-4163-a9e1-9d6d366b5663/port"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5" >
-      <!-- <a-box position="80 80 0" scale="70 70 70" color="tomato" wireframe="true"  wireframe-linewidth=10  animation="property: rotation; to: 0 360 0; loop: true; dur: 20000" ></a-box> -->
-
       <a-image
       src="guide-port.png"
       position="70 250 0" 
       scale="200 200 200"
       ></a-image>
-      <a-image
-      src="map.png"
-      position="100 120 0" 
-      scale="120 40 200"
-      navigate-on-click="url:https://www.google.com/maps/dir/?api=1&destination=24.33252835029597,124.15931266432014"
-      ></a-image>
       </a-nft>
 
       <a-nft
+      id="sukuji"
       type="nft"        
       url="https://cdn.glitch.global/24c94111-7a50-4163-a9e1-9d6d366b5663/sukuji"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5" >
-      <!-- <a-box position="80 80 0" scale="70 70 70" color="tomato" wireframe="true"  wireframe-linewidth=10  animation="property: rotation; to: 0 360 0; loop: true; dur: 20000" ></a-box> -->
       <a-image
       src="guide-sukuji.png"
       position="70 250 0" 
       scale="200 200 200"
       ></a-image>
-      <a-image
-      src="map.png"
-      position="100 120 0" 
-      scale="120 40 200"
-      navigate-on-click="url:https://www.google.com/maps/dir/?api=1&destination=24.464778723344576,124.12349805986521"
-      ></a-image>
       </a-nft>
 
       <a-nft
+      id="yashima"
       type="nft"        
       url="https://cdn.glitch.global/24c94111-7a50-4163-a9e1-9d6d366b5663/yashima"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5" >
-      <!-- <a-box position="80 80 0" scale="70 70 70" color="tomato" wireframe="true"  wireframe-linewidth=10  animation="property: rotation; to: 0 360 0; loop: true; dur: 20000" ></a-box> -->
       <a-image
       src="guide-yashima.png"
       position="70 250 0" 
       scale="200 200 200"
-      ></a-image>
-      <a-image
-      src="map.png"
-      position="100 120 0" 
-      scale="120 40 200"
-      navigate-on-click="url:https://www.google.com/maps/dir/?api=1&destination=24.330963023236066,124.17078288057222"
       ></a-image>
       </a-nft>
 
@@ -245,7 +192,8 @@
       document.querySelector("#nagura").addEventListener("markerLost", function () {
         document.querySelector(".buttons").style.display = "none";
       });
-    </script>    
+    </script> 
+
   </body>
 
 </html>
