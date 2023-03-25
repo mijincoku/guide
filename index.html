@@ -26,25 +26,6 @@
         color: white;
       }
     </style>    
-    
-    <script>
-    AFRAME.registerComponent('navigate-on-click', {
-    schema: {
-      url: {default: ''}
-    },
-    init: function () {
-      var data = this.data;
-      var isMobile = AFRAME.utils.device.isMobile();
-      
-      var eventName = isMobile ? 'touchend' : 'click';
-      this.el.addEventListener(eventName, function () {
-        window.location.href = data.url;
-      });
-    }
-    });
-    </script>
-
-    <script src="https://unpkg.com/aframe-mouse-cursor-component@1.1.0/dist/aframe-mouse-cursor-component.min.js"></script>
 
 
   </head>
@@ -155,7 +136,9 @@
       ></a-image>
       </a-nft>
 
-      <a-entity camera mouse-cursor="rayOrigin: mouse; cursorColor: transparent;"></a-entity>
+      <a-entity camera>
+        <a-cursor></a-cursor>
+      </a-entity>
     </a-scene>
 
   </body>
