@@ -34,7 +34,7 @@
     },
     init: function () {
       var data = this.data;
-      this.el.addEventListener('touchend', function () {
+      this.el.addEventListener('click', function () {
         window.location.href = data.url;
       });
     }
@@ -115,9 +115,12 @@
       src="guide-port.png"
       position="70 250 0" 
       scale="200 200 200"
-      navigate-on-click="url: https://shop.katagiriscreen.com/item-detail/1166610"
       ></a-image>
-      </a-nft>
+      <a-image
+      src="map.png"
+      position="70 250 0" 
+      scale="210 70 200"
+      navigate-on-click="url: https://shop.katagiriscreen.com/item-detail/1166610"
       ></a-image>
       </a-nft>
 
