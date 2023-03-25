@@ -34,13 +34,15 @@
     },
     init: function () {
       var data = this.data;
-      this.el.addEventListener('click', function () {
+      var isMobile = AFRAME.utils.device.isMobile();
+      
+      var eventName = isMobile ? 'touchend' : 'click';
+      this.el.addEventListener(eventName, function () {
         window.location.href = data.url;
       });
     }
     });
     </script>
-
 
   </head>
 
@@ -150,7 +152,7 @@
       ></a-image>
       </a-nft>
 
-      <a-entity camera><a-cursor></a-cursor></a-entity>
+      <a-entity camera></a-entity>
     </a-scene>
 
   </body>
