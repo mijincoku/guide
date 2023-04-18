@@ -54,7 +54,6 @@
         color: white;
       }
 
-
   .buttons {
     position: absolute;
     bottom: 2cm;
@@ -85,7 +84,7 @@
   <body style="margin : 0px; overflow: hidden;">
     <!-- minimal loader shown until image descriptors are loaded -->
     <div class="arjs-loader">
-      <div>しばしお待ちを...</div>
+      <div>しばしお待ちを...（5~10秒）</div>
     </div>
 
     <div class="buttons" style="display: none;">
@@ -99,8 +98,144 @@
       embedded
       arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
     >
-     <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
+    
+    
+     <a-nft
+        id="nagura"
+        type="nft"        
+        url="assets/nagura"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5">
+       <a-image
+        src="guide-nagura.png"
+        position="70 250 0" 
+        scale="200 200 200"
+        ></a-image>
+      </a-nft>
+
+     <a-nft
+        id="hirakubo"     
+        type="nft"        
+        url="assets/hirakubo"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5" >
+        <a-image
+        src="guide-hirakubo.png"
+        position="70 250 0" 
+        scale="200 200 200"
+        ></a-image>
+      </a-nft>
+
       <a-nft
+      id="fuune"
+      type="nft"        
+      url="assets/fuune"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5" >
+      <a-image
+      src="guide-fuune.png"
+      position="70 250 0" 
+      scale="200 200 200"
+      ></a-image>
+      </a-nft>
+
+      <a-nft
+      id="port"
+      type="nft"        
+      url="assets/port"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5" >
+      <a-image
+      src="guide-port.png"
+      position="70 250 0" 
+      scale="200 200 200"
+      ></a-image>
+      </a-nft>
+
+      <a-nft
+      id="sukuji"
+      type="nft"        
+      url="assets/sukuji"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5" >
+      <a-image
+      src="guide-sukuji.png"
+      position="70 250 0" 
+      scale="200 200 200"
+      ></a-image>
+      </a-nft>
+
+      <a-nft
+      id="yashima"
+      type="nft"        
+      url="assets/yashima"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".001"
+      smoothThreshold="10" >
+      <a-image
+      src="guide-yashima.png"
+      position="70 250 0" 
+      scale="200 200 200"
+      ></a-image>
+      </a-nft>
+
+      <a-nft
+      id="sakae"
+      type="nft"        
+      url="assets/sakae"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5" >
+      <a-image
+      src="guide-sakae.png"
+      position="70 250 0" 
+      scale="200 200 200"
+      ></a-image>
+      </a-nft>
+
+      <a-nft
+      id="yorn"
+      type="nft"        
+      url="assets/yorn"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5" >
+      <a-image
+      src="guide-yorn.png"
+      position="70 250 0" 
+      scale="200 200 200"
+      ></a-image>
+      </a-nft>
+
+      <a-nft
+      id="tonoshiro"
+      type="nft"        
+      url="assets/tonoshiro"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5" >
+      <a-image
+      src="guide-tonoshiro.png"
+      position="70 250 0" 
+      scale="200 200 200"
+      ></a-image>
+      </a-nft>
+
+            <!-- <a-nft
         id="nagura"
         type="nft"        
         url="https://cdn.glitch.global/24c94111-7a50-4163-a9e1-9d6d366b5663/nagura"
