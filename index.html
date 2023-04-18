@@ -235,6 +235,33 @@
       ></a-image>
       </a-nft>
 
+      <a-entity camera></a-entity>
+      
+    </a-scene>
+
+
+    <script>
+      window.addEventListener("DOMContentLoaded", function() {
+        const nftElements = document.querySelectorAll("a-nft");
+        nftElements.forEach((nftElement) => {
+          nftElement.addEventListener("markerFound", function () {
+            const link = markerLinks[nftElement.id];
+            document.querySelector(".buttons button").setAttribute("onclick", `location.href='${link}'`);
+            document.querySelector(".buttons").style.display = "flex";
+          });
+
+          nftElement.addEventListener("markerLost", function () {
+            document.querySelector(".buttons").style.display = "none";
+          });
+        });
+      });
+    </script> 
+
+  </body>
+
+</html>
+
+
             <!-- <a-nft
         id="nagura"
         type="nft"        
