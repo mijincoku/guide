@@ -93,8 +93,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 55vmin;
-        height: 91vmin;
+        width: 60.5vmin;
+        height: 100.1vmin;
         border: 2px solid white;
         z-index: 4;
       }
@@ -114,7 +114,7 @@
       <button type="button">ここへ行く！</button>
     </div>
 
-    <div class="scan-text">しおりにかざして！</div> <!-- テキストを変更 -->
+    <div class="scan-text">しおりをスキャン</div> <!-- テキストを変更 -->
     <div class="guide-lines"></div> <!-- ガイド線を追加 -->
 
     <a-scene
@@ -273,12 +273,14 @@
             const link = markerLinks[nftElement.id];
             document.querySelector(".buttons button").setAttribute("onclick", `location.href='${link}'`);
             document.querySelector(".buttons").style.display = "flex";
-            document.querySelector(".scan-text").style.display = "none"; // 追加            
+            document.querySelector(".scan-text").style.display = "none"; // 追加
+            document.querySelector(".guide-lines").style.display = "none"; // 追加                         
           });
 
           nftElement.addEventListener("markerLost", function () {
             document.querySelector(".buttons").style.display = "none";
             document.querySelector(".scan-text").style.display = "block"; // 追加            
+            document.querySelector(".guide-lines").style.display = "block"; // 追加   
           });
         });
       });
