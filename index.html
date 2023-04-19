@@ -75,6 +75,17 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+        .scan-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5em;
+        text-align: center;
+        z-index: 5;
+        }
 </style>
 
     </style>    
@@ -91,6 +102,7 @@
       <button type="button">ここへ行く！</button>
     </div>
 
+    <div class="scan-text">しおりをスキャンしてください</div>
 
     <a-scene
       vr-mode-ui="enabled: false;"
@@ -248,10 +260,12 @@
             const link = markerLinks[nftElement.id];
             document.querySelector(".buttons button").setAttribute("onclick", `location.href='${link}'`);
             document.querySelector(".buttons").style.display = "flex";
+            document.querySelector(".scan-text").style.display = "none"; // 追加            
           });
 
           nftElement.addEventListener("markerLost", function () {
             document.querySelector(".buttons").style.display = "none";
+            document.querySelector(".scan-text").style.display = "block"; // 追加            
           });
         });
       });
