@@ -76,16 +76,28 @@
     cursor: pointer;
   }
 
-        .scan-text {
+      .scan-text {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
-        font-size: 1.5em;
+        font-size: 1.25em; /* フォントサイズを小さくする */
         text-align: center;
         z-index: 5;
-        }
+      }
+
+      /* ガイド線を追加 */
+      .guide-lines {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 55vmin;
+        height: 91vmin;
+        border: 2px solid white;
+        z-index: 4;
+      }
 </style>
 
     </style>    
@@ -102,7 +114,8 @@
       <button type="button">ここへ行く！</button>
     </div>
 
-    <div class="scan-text">しおりをスキャンしてください</div>
+    <div class="scan-text">しおりにかざして！</div> <!-- テキストを変更 -->
+    <div class="guide-lines"></div> <!-- ガイド線を追加 -->
 
     <a-scene
       vr-mode-ui="enabled: false;"
@@ -117,9 +130,9 @@
         type="nft"        
         url="assets/nagura"
         smooth="true"
-        smoothCount="200"
-      smoothTolerance=".1"
-      smoothThreshold="15">
+      smoothCount="10"
+      smoothTolerance=".001"
+      smoothThreshold="15" >
        <a-image
         src="guide-nagura.png"
         position="70 250 0" 
@@ -132,7 +145,7 @@
         type="nft"        
         url="assets/hirakubo"
         smooth="true"
-        smoothCount="100"
+      smoothCount="10"
       smoothTolerance=".001"
       smoothThreshold="15" >
         <a-image
@@ -147,8 +160,8 @@
       type="nft"        
       url="assets/fuune"
       smooth="true"
-      smoothCount="300"
-      smoothTolerance=".0001"
+      smoothCount="10"
+      smoothTolerance=".001"
       smoothThreshold="15" >
       <a-image
       src="guide-fuune.png"
